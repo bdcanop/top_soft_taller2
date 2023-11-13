@@ -5,7 +5,7 @@ FROM python:3.8
 WORKDIR /app
 
 # Copia el archivo de la aplicación Flask al contenedor
-COPY app.py /app/
+COPY app/app.py /app/
 
 # Expone el puerto en el que se ejecutará la aplicación
 EXPOSE 5000
