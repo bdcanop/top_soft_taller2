@@ -1,0 +1,34 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Pokemon</title>
+</head>
+<body>
+    <img src="{{ url_for('serve_static', filename=pokemon['imagen']) }}" alt="{{ pokemon['nombre'] }}">
+    <p>{{ pokemon['frase'] }}</p>
+    <p>ID del contenedor: {{ id_del_contenedor }}</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+    <div class="pokemon-card">
+        <img src="{{ url_for('serve_static', filename=pokemon['imagen']) }}" alt="{{ pokemon['nombre'] }}" class="pokemon-image">
+        <div class="pokemon-info">
+            <h1 class="pokemon-name">{{ pokemon['nombre'] }}</h1>
+            <p class="pokemon-height">Altura: {{ pokemon['altura'] }} m</p>
+            <p class="pokemon-ability">Habilidad: {{ pokemon['habilidad'] }}</p>
+            <p class="id-container">ID del contenedor: {{ id_del_contenedor }}</p>
+            <p class="pokemon-quote">Frase: "{{ pokemon['frase'] }}"</p>
+        </div>
+    </div>
+</body>
+</html>
+
