@@ -1,14 +1,17 @@
-# Utiliza una imagen base de Python
+# Usar una imagen base de Python
 FROM python:3.8
 
-# Establece el directorio de trabajo
+# Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copia el archivo de la aplicación Flask al contenedor
+# Instalar Flask y otras dependencias
+RUN pip install Flask
+
+# Copiar todos los archivos de la aplicación en el directorio de trabajo
 COPY app/app.py /app/
 
-# Expone el puerto en el que se ejecutará la aplicación
+# Exponer el puerto en el que se ejecutará la aplicación (por ejemplo, 5000)
 EXPOSE 5000
 
-# Define el comando de inicio de la aplicación
-CMD ["python", "app.py"]
+# Comando para ejecutar la aplicación Flask
+CMD ["python3", "app.py"]
