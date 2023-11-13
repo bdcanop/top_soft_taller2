@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - master  # Define la rama en la que quieres activar este flujo
+      - master 
 
 jobs:
   build:
@@ -15,9 +15,10 @@ jobs:
 
     - name: Login to DockerHub
       run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
-    
+      
     - name: Build Docker image
-      run: docker build -t bdcanop/top_soft_taller2img1:latest .
+      run: docker build -t bdcanop/top_soft_taller2img1:latest -f Dockerfile .
+
     
     - name: Push Docker image
       run: docker push bdcanop/top_soft_taller2img1:latest
