@@ -2,7 +2,7 @@
 FROM python:3.8
 
 # Establecer el directorio de trabajo en el contenedor
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Instalar Flask y otras dependencias
 RUN pip install Flask
