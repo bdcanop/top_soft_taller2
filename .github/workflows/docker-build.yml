@@ -11,13 +11,14 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Login to DockerHub
       run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
       
     - name: Build Docker image
-      run: docker build -t bdcanop/top_soft_taller2img1:latest -f Dockerfile .
+      run: docker build . --file Dockerfile --tag bdcanop/top_soft_taller2img1:latest
+      
 
     
     - name: Push Docker image
